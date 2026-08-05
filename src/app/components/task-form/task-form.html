@@ -1,0 +1,50 @@
+<h2>Créer une tâche</h2>
+
+<select
+  [(ngModel)]="selectedContextId"
+  (change)="loadLists()">
+
+  <option [value]="0">
+    Choisir un contexte
+  </option>
+
+  <option
+    *ngFor="let context of contexts"
+    [value]="context.id">
+
+    {{ context.nom }}
+
+  </option>
+
+</select>
+<br><br>
+
+<select
+  [(ngModel)]="selectedListId">
+
+  <option [value]="0">
+  Choisir une liste
+  </option>
+
+  <option
+    *ngFor="let list of lists"
+    [value]="list.id">
+      {{ list.nom }}
+
+  </option>
+
+  </select>
+
+  <br><br>
+
+  <input
+    type="text"
+    [(ngModel)]="nom"
+    placeholder="Nom de la tâche">
+
+  <button
+    (click)="add()">
+
+    Ajouter
+
+    </button>
