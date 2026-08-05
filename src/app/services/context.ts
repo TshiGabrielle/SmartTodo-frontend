@@ -15,6 +15,7 @@ export class ContextService {
     'http://localhost:5013/api/contexts';
 
   public contextAdded = new Subject<void>();
+  public listAdded = new Subject<void>();
 
   constructor(
     private http: HttpClient
@@ -50,5 +51,20 @@ export class ContextService {
       `${this.apiUrl}/${contextId}/lists`
     );
   }
+
+  //cas 4 : créer liste
+  createList(
+    contextId: number,
+    nom: string
+  )
+  {
+    return this.http.post<boolean>(
+      `${this.apiUrl}/${contextId}/lists`,
+      {
+        nom: nom
+      }
+    );
+  }
+
 
 }
