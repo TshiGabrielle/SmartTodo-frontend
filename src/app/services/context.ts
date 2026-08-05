@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
+import { TodoList } from '../types/todo-list';
 
 
 import { Context } from '../types/context';
@@ -38,6 +39,16 @@ export class ContextService {
       }
     );
 
+  }
+
+  //cas 3 : récupérer liste d'un contexte
+  getLists(
+    contextId: number
+  )
+  {
+    return this.http.get<TodoList[]>(
+      `${this.apiUrl}/${contextId}/lists`
+    );
   }
 
 }
