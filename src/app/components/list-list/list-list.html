@@ -1,0 +1,31 @@
+<h2>Listes</h2>
+
+<select
+  [(ngModel)]="selectedContextId"
+  (change)="loadLists()">
+
+  <option [value]="0">
+    Choisir un contexte
+  </option>
+
+  <option
+    *ngFor="let context of contexts"
+    [value]="context.id">
+
+    {{ context.nom }}
+
+  </option>
+
+</select>
+
+<br><br>
+
+<ul>
+
+  <li *ngFor="let list of lists">
+
+    {{ list.nom }}
+
+  </li>
+
+</ul>

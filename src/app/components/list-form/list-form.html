@@ -1,0 +1,32 @@
+<h2>Créer une liste</h2>
+
+<select
+  [(ngModel)]="selectedContextId">
+
+  <option [value]="0">
+    Choisir un contexte
+  </option>
+
+  <option
+    *ngFor="let context of contexts"
+    [value]="context.id">
+
+    {{ context.nom }}
+
+  </option>
+
+</select>
+
+<br><br>
+
+<input
+  type="text"
+  [(ngModel)]="nom"
+  placeholder="Nom de la liste">
+
+<button
+  (click)="add()">
+
+  Ajouter
+
+</button>
