@@ -53,6 +53,14 @@ export class TaskListComponent implements OnInit {
 
       });
 
+    this.contextService
+      .taskDeleted
+      .subscribe(() => {
+
+        this.loadTasks();
+
+      });
+
   }
 
   loadLists()
@@ -82,6 +90,21 @@ export class TaskListComponent implements OnInit {
       .subscribe(data => {
 
         this.tasks = [...data];
+
+      });
+  }
+
+  //cas 7 : supprimer tâche
+  deleteTask(id: number)
+  {
+    this.contextService
+      .deleteTask(id)
+      .subscribe(() =>
+      {
+
+        this.contextService
+          .taskDeleted
+          .next();
 
       });
   }

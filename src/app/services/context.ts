@@ -16,6 +16,7 @@ export class ContextService {
   public contextAdded = new Subject<void>();
   public listAdded = new Subject<void>();
   public taskAdded = new Subject<void>();
+  public taskDeleted = new Subject<void>();
 
   constructor(
     private http: HttpClient
@@ -92,5 +93,12 @@ export class ContextService {
     );
   }
 
+  //cas 7 : supprimer tâche
+  deleteTask(id: number)
+  {
+    return this.http.delete<boolean>(
+      `http://localhost:5013/api/tasks/${id}`
+    );
+  }
 
 }
