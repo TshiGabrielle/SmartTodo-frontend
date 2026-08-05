@@ -15,6 +15,7 @@ export class ContextService {
 
   public contextAdded = new Subject<void>();
   public listAdded = new Subject<void>();
+  public taskAdded = new Subject<void>();
 
   constructor(
     private http: HttpClient
@@ -65,7 +66,7 @@ export class ContextService {
     );
   }
 
-// cas 5 : créer liste de tâches
+// cas 5 : afficher liste de tâches
   getTasks(
     contextId: number,
     listId: number
@@ -76,5 +77,20 @@ export class ContextService {
     );
   }
 
-  
+  //cas 6 : créer tâche
+  createTask(
+    contextId: number,
+    listId: number,
+    nom: string
+  )
+  {
+    return this.http.post<boolean>(
+      `${this.apiUrl}/${contextId}/lists/${listId}/tasks`,
+      {
+        nom: nom
+      }
+    );
+  }
+
+
 }

@@ -4,6 +4,7 @@ import { ContextFormComponent } from './components/context-form/context-form';
 import { ListListComponent } from './components/list-list/list-list';
 import { ListFormComponent } from './components/list-form/list-form';
 import { TaskListComponent } from './components/task-list/task-list';
+import { TaskFormComponent } from './components/task-form/task-form';
 
 
 @Component({
@@ -14,7 +15,8 @@ import { TaskListComponent } from './components/task-list/task-list';
     ContextFormComponent,
     ListListComponent,
     ListFormComponent,
-    TaskListComponent
+    TaskListComponent,
+    TaskFormComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

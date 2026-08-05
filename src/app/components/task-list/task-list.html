@@ -10,9 +10,8 @@
     Choisir un contexte
   </option>
 
-  <option
-    *ngFor="let context of contexts"
-    [value]="context.id">
+  <option *ngFor="let context of contexts"
+          [value]="context.id">
 
     {{ context.nom }}
 
@@ -32,9 +31,8 @@
     Choisir une liste
   </option>
 
-  <option
-    *ngFor="let list of lists"
-    [value]="list.id">
+  <option *ngFor="let list of lists"
+          [value]="list.id">
 
     {{ list.nom }}
 

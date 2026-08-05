@@ -45,6 +45,14 @@ export class TaskListComponent implements OnInit {
 
       });
 
+    this.contextService
+      .taskAdded
+      .subscribe(() => {
+
+        this.loadTasks();
+
+      });
+
   }
 
   loadLists()
