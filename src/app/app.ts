@@ -3,6 +3,7 @@ import { ContextListComponent } from './components/context-list/context-list';
 import { ContextFormComponent } from './components/context-form/context-form';
 import { ListListComponent } from './components/list-list/list-list';
 import { ListFormComponent } from './components/list-form/list-form';
+import { TaskListComponent } from './components/task-list/task-list';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { ListFormComponent } from './components/list-form/list-form';
     ContextFormComponent,
     ListListComponent,
     ListFormComponent,
+    TaskListComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

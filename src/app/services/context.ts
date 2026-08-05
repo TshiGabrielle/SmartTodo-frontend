@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { TodoList } from '../types/todo-list';
-
-
 import { Context } from '../types/context';
+import {TodoTask} from '../types/todo-task';
 
 @Injectable({
   providedIn: 'root'
@@ -66,5 +65,16 @@ export class ContextService {
     );
   }
 
+// cas 5 : créer liste de tâches
+  getTasks(
+    contextId: number,
+    listId: number
+  )
+  {
+    return this.http.get<TodoTask[]>(
+      `${this.apiUrl}/${contextId}/lists/${listId}/tasks`
+    );
+  }
 
+  
 }
